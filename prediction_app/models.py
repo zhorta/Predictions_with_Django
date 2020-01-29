@@ -564,4 +564,4 @@ class Posture(models.Model):
     tYAxisAccAngleWRTGravity1 = models.FloatField()
     tZAxisAccAngleWRTGravity1 = models.FloatField()
 
-    posture = models.FloatField()
+    posture = models.FloatField(null=True)
