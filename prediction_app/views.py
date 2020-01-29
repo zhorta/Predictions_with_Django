@@ -614,13 +614,11 @@ def predict_posture(unscaled_data):
                 'tXAxisAccAngleWRTGravity1',
                 'tYAxisAccAngleWRTGravity1',
                 'tZAxisAccAngleWRTGravity1']
-    path_to_model = './ipynd/best_posture_prediction_model.joblib'
-    path_for_scaler = './ipynd/scaler.sav'
+    path_to_model = '/Users/zoehorta/PycharmProjects/Predictions_with_Django/best_posture_prediction_model.joblib'
     unscaled_data = [unscaled_data[colonne] for colonne in colonnes]
     model = joblib.load(path_to_model)
-    scaler = joblib.load(path_for_scaler)
-    donnees_scalees = scaler.transform([unscaled_data])
-    posture = model.predict(donnees_scalees)
+    posture = model.predict([unscaled_data])
+    return posture
 
 
 @csrf_exempt

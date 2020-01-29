@@ -564,7 +564,7 @@ class PostureSerializer(serializers.Serializer):
     tXAxisAccAngleWRTGravity1 = serializers.FloatField()
     tYAxisAccAngleWRTGravity1 = serializers.FloatField()
     tZAxisAccAngleWRTGravity1 = serializers.FloatField()
-    posture = serializers.FloatField()
+    posture = serializers.FloatField(allow_null=True)
 
     def create(self, validated_data):
         return Posture.objects.create(**validated_data)
